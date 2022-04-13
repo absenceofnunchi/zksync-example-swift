@@ -21,6 +21,7 @@ final class AccountStateViewController: UIViewController, WalletConsumer {
         
         configureUI()
         setConstraints()
+        getAccountState()
     }
 
     private func configureUI() {
@@ -48,14 +49,14 @@ final class AccountStateViewController: UIViewController, WalletConsumer {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            addressLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            addressLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             addressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            addressLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            addressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             addressLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            idLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor),
+            idLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 5),
             idLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            idLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            idLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             idLabel.heightAnchor.constraint(equalToConstant: 50),
             
             tableView.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 50),
@@ -65,7 +66,7 @@ final class AccountStateViewController: UIViewController, WalletConsumer {
         ])
     }
     
-    func getAccountState(_ sender: Any) {
+    func getAccountState() {
         wallet.getAccountState { (result) in
             switch result {
             case .success(let state):

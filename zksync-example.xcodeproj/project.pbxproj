@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F723ECD28073D5700CB02B8 /* TokenPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F723ECC28073D5700CB02B8 /* TokenPriceViewController.swift */; };
+		0F723ECF280741AF00CB02B8 /* TransactionFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F723ECE280741AF00CB02B8 /* TransactionFeeViewController.swift */; };
 		0FA89BC728065272000F5681 /* NetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BC628065272000F5681 /* NetworkSelectionTableViewController.swift */; };
 		0FA89BCB28066D76000F5681 /* MethodSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BCA28066D76000F5681 /* MethodSelectionViewController.swift */; };
 		0FA89BCD2806851C000F5681 /* ContractAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BCC2806851C000F5681 /* ContractAddressViewController.swift */; };
+		0FA89BD128069B5D000F5681 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BD028069B5D000F5681 /* UIView+Extensions.swift */; };
+		0FA89BD328069B73000F5681 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BD228069B73000F5681 /* UIAlertController+Extensions.swift */; };
+		0FA89BD528069BB2000F5681 /* BalanceAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BD428069BB2000F5681 /* BalanceAddressCell.swift */; };
 		0FC75C822803842E002A5945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75C812803842E002A5945 /* AppDelegate.swift */; };
 		0FC75C842803842E002A5945 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75C832803842E002A5945 /* SceneDelegate.swift */; };
 		0FC75C862803842E002A5945 /* AccountStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75C852803842E002A5945 /* AccountStateViewController.swift */; };
@@ -21,7 +26,6 @@
 		0FC75CA628038432002A5945 /* zksync_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CA528038432002A5945 /* zksync_exampleUITests.swift */; };
 		0FC75CA828038432002A5945 /* zksync_exampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CA728038432002A5945 /* zksync_exampleUITestsLaunchTests.swift */; };
 		0FC75CB928038D47002A5945 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CB828038D47002A5945 /* AppProtocols.swift */; };
-		0FC75CBB28038E9C002A5945 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CBA28038E9C002A5945 /* AppExtensions.swift */; };
 		0FC75CBE28039048002A5945 /* StateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CBD28039048002A5945 /* StateHeaderTableViewCell.swift */; };
 		0FC75CC02803912A002A5945 /* DepositingBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CBF2803912A002A5945 /* DepositingBalanceTableViewCell.swift */; };
 		9B2DC2A799DE93FC6EFB07DE /* Pods_zksync_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6AAAC8FC19EFCCEF530904 /* Pods_zksync_example.framework */; };
@@ -45,9 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F723ECC28073D5700CB02B8 /* TokenPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenPriceViewController.swift; sourceTree = "<group>"; };
+		0F723ECE280741AF00CB02B8 /* TransactionFeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFeeViewController.swift; sourceTree = "<group>"; };
 		0FA89BC628065272000F5681 /* NetworkSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSelectionTableViewController.swift; sourceTree = "<group>"; };
 		0FA89BCA28066D76000F5681 /* MethodSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSelectionViewController.swift; sourceTree = "<group>"; };
 		0FA89BCC2806851C000F5681 /* ContractAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAddressViewController.swift; sourceTree = "<group>"; };
+		0FA89BD028069B5D000F5681 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		0FA89BD228069B73000F5681 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		0FA89BD428069BB2000F5681 /* BalanceAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAddressCell.swift; sourceTree = "<group>"; };
 		0FC75C7E2803842E002A5945 /* zksync-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zksync-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC75C812803842E002A5945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC75C832803842E002A5945 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +72,6 @@
 		0FC75CA528038432002A5945 /* zksync_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zksync_exampleUITests.swift; sourceTree = "<group>"; };
 		0FC75CA728038432002A5945 /* zksync_exampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zksync_exampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0FC75CB828038D47002A5945 /* AppProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
-		0FC75CBA28038E9C002A5945 /* AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
 		0FC75CBD28039048002A5945 /* StateHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		0FC75CBF2803912A002A5945 /* DepositingBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositingBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		52643F563F0B16272ABCEDD0 /* Pods-zksync-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zksync-example.debug.xcconfig"; path = "Target Support Files/Pods-zksync-example/Pods-zksync-example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +176,8 @@
 				0FA89BC628065272000F5681 /* NetworkSelectionTableViewController.swift */,
 				0FA89BCA28066D76000F5681 /* MethodSelectionViewController.swift */,
 				0FA89BCC2806851C000F5681 /* ContractAddressViewController.swift */,
+				0F723ECC28073D5700CB02B8 /* TokenPriceViewController.swift */,
+				0F723ECE280741AF00CB02B8 /* TransactionFeeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -176,7 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				0FC75CB828038D47002A5945 /* AppProtocols.swift */,
-				0FC75CBA28038E9C002A5945 /* AppExtensions.swift */,
+				0FA89BD028069B5D000F5681 /* UIView+Extensions.swift */,
+				0FA89BD228069B73000F5681 /* UIAlertController+Extensions.swift */,
 			);
 			path = "Extensions+Utilities";
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 			children = (
 				0FC75CBD28039048002A5945 /* StateHeaderTableViewCell.swift */,
 				0FC75CBF2803912A002A5945 /* DepositingBalanceTableViewCell.swift */,
+				0FA89BD428069BB2000F5681 /* BalanceAddressCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -402,11 +414,15 @@
 			files = (
 				0FC75CBE28039048002A5945 /* StateHeaderTableViewCell.swift in Sources */,
 				0FC75C8C2803842E002A5945 /* zksync_example.xcdatamodeld in Sources */,
+				0FA89BD528069BB2000F5681 /* BalanceAddressCell.swift in Sources */,
 				0FA89BCD2806851C000F5681 /* ContractAddressViewController.swift in Sources */,
+				0F723ECD28073D5700CB02B8 /* TokenPriceViewController.swift in Sources */,
+				0F723ECF280741AF00CB02B8 /* TransactionFeeViewController.swift in Sources */,
 				0FA89BCB28066D76000F5681 /* MethodSelectionViewController.swift in Sources */,
 				0FC75CB928038D47002A5945 /* AppProtocols.swift in Sources */,
 				0FC75C862803842E002A5945 /* AccountStateViewController.swift in Sources */,
-				0FC75CBB28038E9C002A5945 /* AppExtensions.swift in Sources */,
+				0FA89BD128069B5D000F5681 /* UIView+Extensions.swift in Sources */,
+				0FA89BD328069B73000F5681 /* UIAlertController+Extensions.swift in Sources */,
 				0FC75C822803842E002A5945 /* AppDelegate.swift in Sources */,
 				0FC75CC02803912A002A5945 /* DepositingBalanceTableViewCell.swift in Sources */,
 				0FA89BC728065272000F5681 /* NetworkSelectionTableViewController.swift in Sources */,
@@ -596,6 +612,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +642,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

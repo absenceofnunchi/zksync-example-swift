@@ -6,19 +6,33 @@
 //
 
 import UIKit
+import ZKSync
+import web3swift
+import PromiseKit
 
-class MethodSelectionViewController: UIViewController {
+enum Menu: String {
+    case getContractAddress = "Get Contract Address"
+    case getAccountInfo = "Get Account Info"
+    case getTokenPrice = "Get Token Price"
+    case getTransactionFee = "Get Transaction Fee"
+    case deposit = "Deposit"
+    case withdraw = "Withdraw"
+    case transfer = "Transfer"
+}
+
+class MethodSelectionViewController: UIViewController, WalletConsumer {
+    var wallet: Wallet!
     private var tableView: UITableView!
     private var stackView: UIStackView!
     private let dataSource: [Any] = [
         ["Address", "ZkSync Balance", "ETH Balance"],
-        "Get Contract Address",
-        "Get Account Info",
-        "Get Token Price",
-        "Get Transaction Fee",
-        "Deposit",
-        "Withdraw",
-        "Transfer"
+        Menu.getContractAddress.rawValue,
+        Menu.getAccountInfo.rawValue,
+        Menu.getTokenPrice.rawValue,
+        Menu.getTransactionFee.rawValue,
+        Menu.deposit.rawValue,
+        Menu.withdraw.rawValue,
+        Menu.transfer.rawValue
     ]
     
     override func viewDidLoad() {
@@ -41,10 +55,33 @@ class MethodSelectionViewController: UIViewController {
         tableView.register(BalanceAddressCell.self, forCellReuseIdentifier: BalanceAddressCell.identifier)
         view.addSubview(tableView)
         tableView.setFill()
+        
+        self.wallet.getAccountState { (result) in
+            self.updateBalances(state: try? result.get())
+        }
     }
     
     private func setConstraints() {
         
+    }
+
+    private func weiToETH(string: String) -> String? {
+        guard let value = Web3.Utils.parseToBigUInt(string, units: .wei) else {
+            return nil
+        }
+        return Web3.Utils.formatToEthereumUnits(value)
+    }
+
+    private func updateBalances(state: AccountState?) {
+        guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? BalanceAddressCell else { return }
+        cell.addressLabel.text = state?.address
+        cell.zksyncBalanceLabel.text = weiToETH(string: state?.committed.balances["ETH"] ?? "0")
+        let provider = try? self.wallet.createEthereumProvider(web3: Web3.InfuraRinkebyWeb3())
+        provider?.getBalance().done { (value) in
+            cell.ethBalanceLabel.text = Web3.Utils.formatToEthereumUnits(value)
+        }.catch { (error) in
+            self.present(UIAlertController.for(error: error), animated: true, completion: nil)
+        }
     }
 }
 
@@ -61,8 +98,8 @@ extension MethodSelectionViewController: UITableViewDataSource, UITableViewDeleg
             }
             
             cell.addressLabel.text = data[0]
-            cell.zksyncBalance.text = data[1]
-            cell.ethBalance.text = data[2]
+            cell.zksyncBalanceLabel.text = data[1]
+            cell.ethBalanceLabel.text = data[2]
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -84,60 +121,32 @@ extension MethodSelectionViewController: UITableViewDataSource, UITableViewDeleg
         }
     }
     
-}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let data = dataSource[indexPath.row] as? String,
+              let menu = Menu(rawValue: data) else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-class BalanceAddressCell: UITableViewCell {
-    static let identifier = "BalanceAddressCell"
-    var addressLabel: UILabel!
-    var zksyncBalance: UILabel!
-    var ethBalance: UILabel!
-    let inset: CGFloat = 10
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        configure()
-        setConstraints()
-    }
- 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        addressLabel = createLabel(text: "Address")
-        contentView.addSubview(addressLabel)
-        
-        zksyncBalance = createLabel(text: "ZkSync Balance")
-        contentView.addSubview(zksyncBalance)
-        
-        ethBalance = createLabel(text: "ETH Balance")
-        contentView.addSubview(ethBalance)
+        switch menu {
+        case .getContractAddress:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "ContractAddressViewController") as? ContractAddressViewController else { return }
+            vc.wallet = wallet
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .getAccountInfo:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "AccountStateViewController") as? AccountStateViewController else { return }
+            vc.wallet = wallet
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .getTokenPrice:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "TokenPriceViewController") as? TokenPriceViewController else { return }
+            vc.wallet = wallet
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .getTransactionFee:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "TransactionFeeViewController") as? TransactionFeeViewController else { return }
+            vc.wallet = wallet
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
     
-    private func setConstraints() {
-        NSLayoutConstraint.activate([
-            addressLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            addressLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            addressLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            addressLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
-            
-            zksyncBalance.topAnchor.constraint(equalTo: addressLabel.bottomAnchor),
-            zksyncBalance.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            zksyncBalance.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            zksyncBalance.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
-            
-            ethBalance.topAnchor.constraint(equalTo: zksyncBalance.bottomAnchor),
-            ethBalance.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            ethBalance.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            ethBalance.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3),
-        ])
-    }
-    
-    private func createLabel(text: String) -> UILabel {
-        let label = UILabel()
-        label.text = text
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }
 }
