@@ -144,8 +144,18 @@ extension MethodSelectionViewController: UITableViewDataSource, UITableViewDeleg
             guard let vc = storyboard.instantiateViewController(withIdentifier: "TransactionFeeViewController") as? TransactionFeeViewController else { return }
             vc.wallet = wallet
             self.navigationController?.pushViewController(vc, animated: true)
-        default:
-            break
+        case .deposit:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "DepositViewController") as? DepositViewController else { return }
+            vc.wallet = wallet
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .withdraw:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "WithdrawViewController") as? WithdrawViewController else { return }
+            vc.wallet = wallet
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .transfer:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "TransferViewController") as? TransferViewController else { return }
+            vc.wallet = wallet
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
