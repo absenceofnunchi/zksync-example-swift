@@ -490,6 +490,21 @@
             </objects>
             <point key="canvasLocation" x="-1217" y="935"/>
         </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="h8C-TU-U6y">
+            <objects>
+                <viewController id="pra-He-Gvh" customClass="SignupViewController" customModule="zksync_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uAe-GU-pct">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pjt-Yg-2ZC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EwE-gu-nHX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1217" y="3664"/>
+        </scene>
         <!--Method Selection View Controller-->
         <scene sceneID="tW8-8o-wIc">
             <objects>

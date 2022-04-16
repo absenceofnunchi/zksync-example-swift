@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4A7C4A280A7457002552D2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A7C49280A7457002552D2 /* SignupViewController.swift */; };
 		0F68DC09280759970023E952 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68DC08280759970023E952 /* DepositViewController.swift */; };
 		0F68DC0B280759A30023E952 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68DC0A280759A30023E952 /* WithdrawViewController.swift */; };
 		0F68DC0D280759B40023E952 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68DC0C280759B30023E952 /* TransferViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F4A7C49280A7457002552D2 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0F68DC08280759970023E952 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
 		0F68DC0A280759A30023E952 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		0F68DC0C280759B30023E952 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				0F68DC08280759970023E952 /* DepositViewController.swift */,
 				0F68DC0A280759A30023E952 /* WithdrawViewController.swift */,
 				0F68DC0C280759B30023E952 /* TransferViewController.swift */,
+				0F4A7C49280A7457002552D2 /* SignupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				0F723ECD28073D5700CB02B8 /* TokenPriceViewController.swift in Sources */,
 				0F723ECF280741AF00CB02B8 /* TransactionFeeViewController.swift in Sources */,
 				0FA89BCB28066D76000F5681 /* MethodSelectionViewController.swift in Sources */,
+				0F4A7C4A280A7457002552D2 /* SignupViewController.swift in Sources */,
 				0FC75CB928038D47002A5945 /* AppProtocols.swift in Sources */,
 				0FC75C862803842E002A5945 /* AccountStateViewController.swift in Sources */,
 				0FA89BD128069B5D000F5681 /* UIView+Extensions.swift in Sources */,
