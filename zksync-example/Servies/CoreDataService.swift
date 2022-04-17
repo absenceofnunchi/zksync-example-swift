@@ -34,7 +34,7 @@ class LocalDatabase {
         }
     }
     
-    func saveWallet(isRegistered: Bool, wallet: KeyWalletModel, completion: @escaping (WalletSavingError?) -> Void) {
+    func saveWallet(isRegistered: Bool, wallet: KeyWalletModel, completion: @escaping (Errors?) -> Void) {
         container.performBackgroundTask { [weak self](context) in
             
             self?.deleteWallet { (error) in
@@ -55,14 +55,14 @@ class LocalDatabase {
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        completion(WalletSavingError.couldNotSaveTheWallet)
+                        completion(.generalError("Could not save wallet"))
                     }
                 }
             }
         }
     }
     
-    func deleteWallet(completion: @escaping (WalletSavingError?) -> Void) {
+    func deleteWallet(completion: @escaping (Errors?) -> Void) {
         let requestWallet: NSFetchRequest<KeyWallet> = KeyWallet.fetchRequest()
         
         do {
@@ -77,7 +77,7 @@ class LocalDatabase {
             completion(nil)
         } catch {
             DispatchQueue.main.async {
-                completion(WalletSavingError.couldNotDeleteTheWallet)
+                completion(.generalError("Could not delete the wallet"))
             }
         }
     }

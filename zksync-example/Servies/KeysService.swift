@@ -26,30 +26,30 @@ class KeysService: IKeysService {
         return localStorage.getWallet()
     }
     
-    func addNewWalletWithPrivateKey(key: String, password: String, completion: @escaping (KeyWalletModel?, WalletSavingError?) -> Void) {
+    func addNewWalletWithPrivateKey(key: String, password: String, completion: @escaping (KeyWalletModel?, Errors?) -> Void) {
         let text = key.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let data = Data.fromHex(text) else {
-            completion(nil, WalletSavingError.couldNotSaveTheWallet)
+            completion(nil, .generalError("Could not encode password"))
             return
         }
         
         guard let newWallet = try? EthereumKeystoreV3(privateKey: data, password: password) else {
-            completion(nil, WalletSavingError.couldNotSaveTheWallet)
+            completion(nil, .generalError("Could not generate wallet"))
             return
         }
         
         guard newWallet.addresses?.count == 1 else {
-            completion(nil, WalletSavingError.couldNotSaveTheWallet)
+            completion(nil, .generalError("Could not get the wallet address"))
             return
         }
         
         guard let keyData = try? JSONEncoder().encode(newWallet.keystoreParams) else {
-            completion(nil, WalletSavingError.couldNotCreateTheWallet)
+            completion(nil, .generalError("Could not encode wallet"))
             return
         }
         
         guard let address = newWallet.addresses?.first?.address else {
-            completion(nil, WalletSavingError.couldNotGetAddress)
+            completion(nil, .generalError("Could not get wallet address"))
             return
         }
         
@@ -57,24 +57,24 @@ class KeysService: IKeysService {
         completion(walletModel, nil)
     }
     
-    func createNewWallet(password: String, completion: @escaping (KeyWalletModel?, Error?) -> Void) {
+    func createNewWallet(password: String, completion: @escaping (KeyWalletModel?, Errors?) -> Void) {
         guard let newWallet = try? EthereumKeystoreV3(password: password) else {
-            completion(nil, WalletSavingError.couldNotCreateTheWallet)
+            completion(nil, .generalError("Could not generate wallet"))
             return
         }
         
         guard newWallet.addresses?.count == 1 else {
-            completion(nil, WalletSavingError.couldNotCreateTheWallet)
+            completion(nil, .generalError("Could not generate wallet"))
             return
         }
         
         guard let keydata = try? JSONEncoder().encode(newWallet.keystoreParams) else {
-            completion(nil, WalletSavingError.couldNotCreateTheWallet)
+            completion(nil, .generalError("Could not encode wallet"))
             return
         }
         
         guard let address = newWallet.addresses?.first?.address else {
-            completion(nil, WalletSavingError.couldNotCreateTheWallet)
+            completion(nil, .generalError("Could not get the address of the wallet"))
             return
         }
         
@@ -84,19 +84,18 @@ class KeysService: IKeysService {
     
     func getWalletPrivateKey(password: String) throws -> String? {
         guard let selectedWallet = selectedWallet(), let address = EthereumAddress(selectedWallet.address) else {
-            print(WalletSavingError.couldNotGetAddress)
             return nil
         }
         let data = try keystoreManager()?.UNSAFE_getPrivateKeyData(password: password, account: address)
         return data?.toHexString()
     }
     
-    func resetPassword(oldPassword: String, newPassword: String, completion: @escaping (KeyWalletModel?, ResetPasswordError?) -> Void) {
+    func resetPassword(oldPassword: String, newPassword: String, completion: @escaping (KeyWalletModel?, Errors?) -> Void) {
         guard let selectedWallet = selectedWallet(),
               let data = selectedWallet.data,
               let ks = EthereumKeystoreV3(data) else {
             DispatchQueue.main.async {
-                completion(nil, ResetPasswordError.failureToFetchOldPassword)
+                completion(nil, .generalError("Failure to fetch old password"))
             }
             return
         }
@@ -115,7 +114,7 @@ class KeysService: IKeysService {
             }
         } catch {
             DispatchQueue.main.async {
-                completion(nil, ResetPasswordError.failureToRegeneratePassword)
+                completion(nil, .generalError("Failure to generate new password"))
             }
         }
     }
