@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0F4A7C4A280A7457002552D2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A7C49280A7457002552D2 /* SignupViewController.swift */; };
+		0F5A50CA280BC52D00F2287A /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A50C9280BC52D00F2287A /* CoreDataService.swift */; };
+		0F5A50CC280BC55F00F2287A /* KeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A50CB280BC55F00F2287A /* KeysService.swift */; };
+		0F5A50CF280BC5E100F2287A /* KeyWallet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A50CD280BC5E000F2287A /* KeyWallet+CoreDataClass.swift */; };
+		0F5A50D0280BC5E100F2287A /* KeyWallet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A50CE280BC5E000F2287A /* KeyWallet+CoreDataProperties.swift */; };
 		0F68DC09280759970023E952 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68DC08280759970023E952 /* DepositViewController.swift */; };
 		0F68DC0B280759A30023E952 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68DC0A280759A30023E952 /* WithdrawViewController.swift */; };
 		0F68DC0D280759B40023E952 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68DC0C280759B30023E952 /* TransferViewController.swift */; };
@@ -54,6 +58,10 @@
 
 /* Begin PBXFileReference section */
 		0F4A7C49280A7457002552D2 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		0F5A50C9280BC52D00F2287A /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		0F5A50CB280BC55F00F2287A /* KeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysService.swift; sourceTree = "<group>"; };
+		0F5A50CD280BC5E000F2287A /* KeyWallet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyWallet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0F5A50CE280BC5E000F2287A /* KeyWallet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyWallet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0F68DC08280759970023E952 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
 		0F68DC0A280759A30023E952 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		0F68DC0C280759B30023E952 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +121,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5A50C8280BC46300F2287A /* Servies */ = {
+			isa = PBXGroup;
+			children = (
+				0F5A50C9280BC52D00F2287A /* CoreDataService.swift */,
+				0F5A50CB280BC55F00F2287A /* KeysService.swift */,
+			);
+			path = Servies;
+			sourceTree = "<group>";
+		};
+		0F5A50D1280BC5ED00F2287A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0F5A50CD280BC5E000F2287A /* KeyWallet+CoreDataClass.swift */,
+				0F5A50CE280BC5E000F2287A /* KeyWallet+CoreDataProperties.swift */,
+				0FC75C8A2803842E002A5945 /* zksync_example.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		0FC75C752803842E002A5945 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +165,7 @@
 		0FC75C802803842E002A5945 /* zksync-example */ = {
 			isa = PBXGroup;
 			children = (
+				0F5A50C8280BC46300F2287A /* Servies */,
 				0FC75CBC2803901A002A5945 /* CustomCells */,
 				0FC75CB728038C96002A5945 /* Extensions+Utilities */,
 				0FC75CB628038A83002A5945 /* ViewControllers */,
@@ -172,7 +200,7 @@
 				0FC75C8D28038431002A5945 /* Assets.xcassets */,
 				0FC75C8F28038431002A5945 /* LaunchScreen.storyboard */,
 				0FC75C9228038432002A5945 /* Info.plist */,
-				0FC75C8A2803842E002A5945 /* zksync_example.xcdatamodeld */,
+				0F5A50D1280BC5ED00F2287A /* CoreData */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -434,14 +462,18 @@
 				0FA89BCB28066D76000F5681 /* MethodSelectionViewController.swift in Sources */,
 				0F4A7C4A280A7457002552D2 /* SignupViewController.swift in Sources */,
 				0FC75CB928038D47002A5945 /* AppProtocols.swift in Sources */,
+				0F5A50D0280BC5E100F2287A /* KeyWallet+CoreDataProperties.swift in Sources */,
 				0FC75C862803842E002A5945 /* AccountStateViewController.swift in Sources */,
 				0FA89BD128069B5D000F5681 /* UIView+Extensions.swift in Sources */,
 				0FA89BD328069B73000F5681 /* UIAlertController+Extensions.swift in Sources */,
 				0FC75C822803842E002A5945 /* AppDelegate.swift in Sources */,
+				0F5A50CF280BC5E100F2287A /* KeyWallet+CoreDataClass.swift in Sources */,
+				0F5A50CC280BC55F00F2287A /* KeysService.swift in Sources */,
 				0FC75CC02803912A002A5945 /* DepositingBalanceTableViewCell.swift in Sources */,
 				0F68DC0B280759A30023E952 /* WithdrawViewController.swift in Sources */,
 				0F68DC09280759970023E952 /* DepositViewController.swift in Sources */,
 				0FA89BC728065272000F5681 /* NetworkSelectionTableViewController.swift in Sources */,
+				0F5A50CA280BC52D00F2287A /* CoreDataService.swift in Sources */,
 				0FC75C842803842E002A5945 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
