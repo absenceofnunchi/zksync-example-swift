@@ -539,23 +539,46 @@ Create a new wallet</string>
                                     <action selector="buttonPressed:" destination="pra-He-Gvh" eventType="touchUpInside" id="CHX-dE-Gvo"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numerical password for your wallet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NrR-ff-zmJ" userLabel="Password TextField">
+                                <rect key="frame" x="20" y="313.5" width="374" height="50"/>
+                                <accessibility key="accessibilityConfiguration" hint="Numerical password for every time a transaction needs to be signed for things like transferring or depositting funds."/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uMU-YL-gQu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-CT-uJX" userLabel="Create Password Label">
+                                <rect key="frame" x="20" y="273" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pjt-Yg-2ZC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pjt-Yg-2ZC" firstAttribute="trailing" secondItem="NrR-ff-zmJ" secondAttribute="trailing" constant="20" id="2Uj-wx-3Yb"/>
                             <constraint firstItem="pjt-Yg-2ZC" firstAttribute="trailing" secondItem="qrV-El-csA" secondAttribute="trailing" constant="20" id="IHQ-H6-Fos"/>
+                            <constraint firstItem="UaG-G5-KBm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pjt-Yg-2ZC" secondAttribute="leading" symbolic="YES" id="O9S-wa-AHM"/>
+                            <constraint firstItem="ASv-CT-uJX" firstAttribute="top" secondItem="qrV-El-csA" secondAttribute="bottom" constant="50" id="Qvy-9E-odI"/>
+                            <constraint firstItem="NrR-ff-zmJ" firstAttribute="top" secondItem="ASv-CT-uJX" secondAttribute="bottom" constant="20" id="RHY-Sm-g6c"/>
                             <constraint firstItem="pjt-Yg-2ZC" firstAttribute="trailing" secondItem="QHP-rG-Ftr" secondAttribute="trailing" constant="20" id="U9Q-vr-zD0"/>
                             <constraint firstItem="qrV-El-csA" firstAttribute="leading" secondItem="pjt-Yg-2ZC" secondAttribute="leading" constant="20" id="WxA-ka-LYd"/>
+                            <constraint firstItem="NrR-ff-zmJ" firstAttribute="leading" secondItem="pjt-Yg-2ZC" secondAttribute="leading" constant="20" id="ZL6-Yi-ce5"/>
                             <constraint firstItem="QHP-rG-Ftr" firstAttribute="leading" secondItem="pjt-Yg-2ZC" secondAttribute="leading" constant="20" id="eGK-gZ-M8X"/>
                             <constraint firstItem="UaG-G5-KBm" firstAttribute="width" secondItem="uAe-GU-pct" secondAttribute="width" multiplier="0.5" id="g0u-TO-s80"/>
                             <constraint firstItem="pjt-Yg-2ZC" firstAttribute="bottom" secondItem="QHP-rG-Ftr" secondAttribute="bottom" constant="100" id="kXV-ZV-cnO"/>
+                            <constraint firstItem="ASv-CT-uJX" firstAttribute="leading" secondItem="pjt-Yg-2ZC" secondAttribute="leading" constant="20" id="pP0-Bg-MAj"/>
                             <constraint firstItem="qrV-El-csA" firstAttribute="top" secondItem="pjt-Yg-2ZC" secondAttribute="top" id="qWK-i5-4AD"/>
                             <constraint firstItem="UaG-G5-KBm" firstAttribute="top" secondItem="QHP-rG-Ftr" secondAttribute="bottom" constant="30" id="qw9-Ee-qBf"/>
                             <constraint firstItem="pjt-Yg-2ZC" firstAttribute="trailing" secondItem="UaG-G5-KBm" secondAttribute="trailing" constant="20" id="tNB-Ne-R9g"/>
+                            <constraint firstItem="pjt-Yg-2ZC" firstAttribute="trailing" secondItem="ASv-CT-uJX" secondAttribute="trailing" constant="20" id="vSj-eS-GKQ"/>
                             <constraint firstItem="qrV-El-csA" firstAttribute="height" secondItem="uAe-GU-pct" secondAttribute="height" multiplier="0.2" id="wuK-QZ-Tas"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="psswordTextField" destination="NrR-ff-zmJ" id="PQU-IY-sNV"/>
                         <segue destination="cVu-Vk-fmv" kind="showDetail" id="Sht-by-7XG"/>
                     </connections>
                 </viewController>
@@ -586,7 +609,7 @@ Create a new wallet</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" smartDashesType="no"/>
                             </textField>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWP-es-R9b" userLabel="Import Wallet Button">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWP-es-R9b" userLabel="Import Wallet Button">
                                 <rect key="frame" x="20" y="687" width="374" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" hint="Button to import an existing Ethereum wallet using a private key"/>
@@ -614,7 +637,9 @@ Create a new wallet</string>
                             <constraint firstItem="I3r-2R-HSt" firstAttribute="bottom" secondItem="AWP-es-R9b" secondAttribute="bottom" constant="100" id="NZa-n7-Lrj"/>
                             <constraint firstItem="tcQ-ji-IhN" firstAttribute="top" secondItem="I3r-2R-HSt" secondAttribute="top" id="Sf8-t7-qJT"/>
                             <constraint firstItem="8Nt-zA-2B9" firstAttribute="leading" secondItem="tcQ-ji-IhN" secondAttribute="leading" id="Yzw-tB-gSm"/>
+                            <constraint firstItem="AWP-es-R9b" firstAttribute="trailing" secondItem="8Nt-zA-2B9" secondAttribute="trailing" id="fDr-VU-QZ2"/>
                             <constraint firstItem="8Nt-zA-2B9" firstAttribute="trailing" secondItem="t4U-SB-Hab" secondAttribute="trailingMargin" id="fcu-PR-spt"/>
+                            <constraint firstItem="AWP-es-R9b" firstAttribute="leading" secondItem="8Nt-zA-2B9" secondAttribute="leading" id="tb9-QJ-biv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HkA-fw-c50"/>

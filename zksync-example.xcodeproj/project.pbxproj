@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F03C2EA280E54600012A97E /* WalletGenerationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F03C2E9280E54600012A97E /* WalletGenerationController.swift */; };
+		0F03C2EC280E55510012A97E /* web3swiftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F03C2EB280E55510012A97E /* web3swiftService.swift */; };
+		0F03C2EE280E5DBF0012A97E /* AuthSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F03C2ED280E5DBF0012A97E /* AuthSwitcher.swift */; };
 		0F2B0DA7280D110700BE1A43 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B0DA6280D110700BE1A43 /* SigninViewController.swift */; };
 		0F2B0DA9280D120000BE1A43 /* ViewControllerIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2B0DA8280D120000BE1A43 /* ViewControllerIdentifiers.swift */; };
 		0F4A7C4A280A7457002552D2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A7C49280A7457002552D2 /* SignupViewController.swift */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F03C2E9280E54600012A97E /* WalletGenerationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletGenerationController.swift; sourceTree = "<group>"; };
+		0F03C2EB280E55510012A97E /* web3swiftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = web3swiftService.swift; sourceTree = "<group>"; };
+		0F03C2ED280E5DBF0012A97E /* AuthSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSwitcher.swift; sourceTree = "<group>"; };
 		0F2B0DA6280D110700BE1A43 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		0F2B0DA8280D120000BE1A43 /* ViewControllerIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerIdentifiers.swift; sourceTree = "<group>"; };
 		0F4A7C49280A7457002552D2 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -127,10 +133,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F03C2E8280E544A0012A97E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F03C2E9280E54600012A97E /* WalletGenerationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		0F53F186280BC7F700ED381E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				0F53F187280BC82400ED381E /* Errors.swift */,
+				0F03C2ED280E5DBF0012A97E /* AuthSwitcher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +155,7 @@
 			children = (
 				0F5A50C9280BC52D00F2287A /* CoreDataService.swift */,
 				0F5A50CB280BC55F00F2287A /* KeysService.swift */,
+				0F03C2EB280E55510012A97E /* web3swiftService.swift */,
 			);
 			path = Servies;
 			sourceTree = "<group>";
@@ -184,6 +200,7 @@
 				0FC75CBC2803901A002A5945 /* CustomCells */,
 				0FC75CB728038C96002A5945 /* Extensions+Utilities */,
 				0FC75CB628038A83002A5945 /* ViewControllers */,
+				0F03C2E8280E544A0012A97E /* Controllers */,
 				0F53F186280BC7F700ED381E /* Models */,
 				0F5A50D1280BC5ED00F2287A /* CoreData */,
 				0FC75CB528038A69002A5945 /* Supporting Files */,
@@ -471,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC75CBE28039048002A5945 /* StateHeaderTableViewCell.swift in Sources */,
+				0F03C2EA280E54600012A97E /* WalletGenerationController.swift in Sources */,
 				0F2B0DA7280D110700BE1A43 /* SigninViewController.swift in Sources */,
 				0F53F181280BC75100ED381E /* Model.xcdatamodeld in Sources */,
 				0F68DC0D280759B40023E952 /* TransferViewController.swift in Sources */,
@@ -485,6 +503,8 @@
 				0F53F185280BC7D200ED381E /* KeyWallet+CoreDataProperties.swift in Sources */,
 				0FC75C862803842E002A5945 /* AccountStateViewController.swift in Sources */,
 				0FA89BD128069B5D000F5681 /* UIView+Extensions.swift in Sources */,
+				0F03C2EE280E5DBF0012A97E /* AuthSwitcher.swift in Sources */,
+				0F03C2EC280E55510012A97E /* web3swiftService.swift in Sources */,
 				0FA89BD328069B73000F5681 /* UIAlertController+Extensions.swift in Sources */,
 				0FC75C822803842E002A5945 /* AppDelegate.swift in Sources */,
 				0F53F184280BC7D200ED381E /* KeyWallet+CoreDataClass.swift in Sources */,
