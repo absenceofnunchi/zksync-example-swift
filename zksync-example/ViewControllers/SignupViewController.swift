@@ -17,48 +17,47 @@ final class SignupViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
     private var chainId: ChainId = .rinkeby
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tapToDismissKeyboard()
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         switch sender.tag {
         case 0:
             didCreateWallet()
         case 1:
-            guard let vc = storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.signinVC) as? SigninViewController else {
-                return
-            }
-            present(vc, animated: true)
+            navigateToImport()
         default:
             break
         }
     }
     
     private func didCreateWallet() {
+        showSpinner()
         guard let password = passwordTextField.text else { return }
         
-        
-        let walletController = WalletGenerationController()
-        walletController.createWallet(with: .createKey, password: password, key: nil) { [weak self] error in
-            if let error = error {
-                print(error)
-            }
-            
-            guard let chainId = self?.chainId else {
-                return
-            }
-            
-            do {
-                guard let privateKey = try KeysService().getWalletPrivateKey(password: password) else { return }
-                let wallet = self?.createZKWallet(chainId, privateKey: privateKey)
+        DispatchQueue.global().async {
+            let walletController = WalletGenerationController()
+            walletController.createWallet(with: .createKey, password: password, key: nil) { [weak self] error in
+                if let error = error {
+                    print(error)
+                }
                 
-            } catch {
-                print(error)
+                guard let chainId = self?.chainId else {
+                    return
+                }
+                
+                do {
+                    guard let privateKey = try KeysService().getWalletPrivateKey(password: password) else { return }
+                    let wallet = self?.createZKWallet(chainId, privateKey: privateKey)
+                    print("wallet", wallet as Any)
+                    self?.hideSpinner()
+                } catch {
+                    print(error)
+                }
             }
         }
     }
@@ -79,6 +78,14 @@ final class SignupViewController: UIViewController {
         }
 
         return wallet
+    }
+    
+    private func navigateToImport() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.signinVC) as? SigninViewController else {
+            return
+        }
+        present(vc, animated: true)
     }
 }
 

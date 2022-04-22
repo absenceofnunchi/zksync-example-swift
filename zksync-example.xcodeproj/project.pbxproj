@@ -24,12 +24,16 @@
 		0F68DC0D280759B40023E952 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F68DC0C280759B30023E952 /* TransferViewController.swift */; };
 		0F723ECD28073D5700CB02B8 /* TokenPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F723ECC28073D5700CB02B8 /* TokenPriceViewController.swift */; };
 		0F723ECF280741AF00CB02B8 /* TransactionFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F723ECE280741AF00CB02B8 /* TransactionFeeViewController.swift */; };
+		0F7FE4B828124F40008902EC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7FE4B728124F40008902EC /* MainTabBarController.swift */; };
+		0F7FE4BA28125396008902EC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7FE4B928125396008902EC /* UIViewController+Extensions.swift */; };
 		0FA89BC728065272000F5681 /* NetworkSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BC628065272000F5681 /* NetworkSelectionTableViewController.swift */; };
 		0FA89BCB28066D76000F5681 /* MethodSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BCA28066D76000F5681 /* MethodSelectionViewController.swift */; };
 		0FA89BCD2806851C000F5681 /* ContractAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BCC2806851C000F5681 /* ContractAddressViewController.swift */; };
 		0FA89BD128069B5D000F5681 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BD028069B5D000F5681 /* UIView+Extensions.swift */; };
 		0FA89BD328069B73000F5681 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BD228069B73000F5681 /* UIAlertController+Extensions.swift */; };
 		0FA89BD528069BB2000F5681 /* BalanceAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA89BD428069BB2000F5681 /* BalanceAddressCell.swift */; };
+		0FC2510F2810919C005D0D12 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2510E2810919C005D0D12 /* AssetsViewController.swift */; };
+		0FC251112810959F005D0D12 /* ViewControllerNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC251102810959F005D0D12 /* ViewControllerNames.swift */; };
 		0FC75C822803842E002A5945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75C812803842E002A5945 /* AppDelegate.swift */; };
 		0FC75C842803842E002A5945 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75C832803842E002A5945 /* SceneDelegate.swift */; };
 		0FC75C862803842E002A5945 /* AccountStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75C852803842E002A5945 /* AccountStateViewController.swift */; };
@@ -39,7 +43,7 @@
 		0FC75C9C28038432002A5945 /* zksync_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75C9B28038432002A5945 /* zksync_exampleTests.swift */; };
 		0FC75CA628038432002A5945 /* zksync_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CA528038432002A5945 /* zksync_exampleUITests.swift */; };
 		0FC75CA828038432002A5945 /* zksync_exampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CA728038432002A5945 /* zksync_exampleUITestsLaunchTests.swift */; };
-		0FC75CB928038D47002A5945 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CB828038D47002A5945 /* AppProtocols.swift */; };
+		0FC75CB928038D47002A5945 /* AppProtocolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CB828038D47002A5945 /* AppProtocolType.swift */; };
 		0FC75CBE28039048002A5945 /* StateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CBD28039048002A5945 /* StateHeaderTableViewCell.swift */; };
 		0FC75CC02803912A002A5945 /* DepositingBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC75CBF2803912A002A5945 /* DepositingBalanceTableViewCell.swift */; };
 		9B2DC2A799DE93FC6EFB07DE /* Pods_zksync_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6AAAC8FC19EFCCEF530904 /* Pods_zksync_example.framework */; };
@@ -80,12 +84,16 @@
 		0F68DC0C280759B30023E952 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		0F723ECC28073D5700CB02B8 /* TokenPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenPriceViewController.swift; sourceTree = "<group>"; };
 		0F723ECE280741AF00CB02B8 /* TransactionFeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFeeViewController.swift; sourceTree = "<group>"; };
+		0F7FE4B728124F40008902EC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		0F7FE4B928125396008902EC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0FA89BC628065272000F5681 /* NetworkSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSelectionTableViewController.swift; sourceTree = "<group>"; };
 		0FA89BCA28066D76000F5681 /* MethodSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSelectionViewController.swift; sourceTree = "<group>"; };
 		0FA89BCC2806851C000F5681 /* ContractAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAddressViewController.swift; sourceTree = "<group>"; };
 		0FA89BD028069B5D000F5681 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0FA89BD228069B73000F5681 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		0FA89BD428069BB2000F5681 /* BalanceAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAddressCell.swift; sourceTree = "<group>"; };
+		0FC2510E2810919C005D0D12 /* AssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		0FC251102810959F005D0D12 /* ViewControllerNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNames.swift; sourceTree = "<group>"; };
 		0FC75C7E2803842E002A5945 /* zksync-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zksync-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC75C812803842E002A5945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC75C832803842E002A5945 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +107,7 @@
 		0FC75CA128038432002A5945 /* zksync-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zksync-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC75CA528038432002A5945 /* zksync_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zksync_exampleUITests.swift; sourceTree = "<group>"; };
 		0FC75CA728038432002A5945 /* zksync_exampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zksync_exampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0FC75CB828038D47002A5945 /* AppProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
+		0FC75CB828038D47002A5945 /* AppProtocolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocolType.swift; sourceTree = "<group>"; };
 		0FC75CBD28039048002A5945 /* StateHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		0FC75CBF2803912A002A5945 /* DepositingBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositingBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		52643F563F0B16272ABCEDD0 /* Pods-zksync-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zksync-example.debug.xcconfig"; path = "Target Support Files/Pods-zksync-example/Pods-zksync-example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 			children = (
 				0F53F187280BC82400ED381E /* Errors.swift */,
 				0F03C2ED280E5DBF0012A97E /* AuthSwitcher.swift */,
+				0FC251102810959F005D0D12 /* ViewControllerNames.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +261,8 @@
 				0F68DC0C280759B30023E952 /* TransferViewController.swift */,
 				0F4A7C49280A7457002552D2 /* SignupViewController.swift */,
 				0F2B0DA6280D110700BE1A43 /* SigninViewController.swift */,
+				0FC2510E2810919C005D0D12 /* AssetsViewController.swift */,
+				0F7FE4B728124F40008902EC /* MainTabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,10 +270,11 @@
 		0FC75CB728038C96002A5945 /* Extensions+Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				0FC75CB828038D47002A5945 /* AppProtocols.swift */,
+				0FC75CB828038D47002A5945 /* AppProtocolType.swift */,
 				0F2B0DA8280D120000BE1A43 /* ViewControllerIdentifiers.swift */,
 				0FA89BD028069B5D000F5681 /* UIView+Extensions.swift */,
 				0FA89BD228069B73000F5681 /* UIAlertController+Extensions.swift */,
+				0F7FE4B928125396008902EC /* UIViewController+Extensions.swift */,
 			);
 			path = "Extensions+Utilities";
 			sourceTree = "<group>";
@@ -497,9 +509,10 @@
 				0FA89BCD2806851C000F5681 /* ContractAddressViewController.swift in Sources */,
 				0F723ECD28073D5700CB02B8 /* TokenPriceViewController.swift in Sources */,
 				0F723ECF280741AF00CB02B8 /* TransactionFeeViewController.swift in Sources */,
+				0F7FE4B828124F40008902EC /* MainTabBarController.swift in Sources */,
 				0FA89BCB28066D76000F5681 /* MethodSelectionViewController.swift in Sources */,
 				0F4A7C4A280A7457002552D2 /* SignupViewController.swift in Sources */,
-				0FC75CB928038D47002A5945 /* AppProtocols.swift in Sources */,
+				0FC75CB928038D47002A5945 /* AppProtocolType.swift in Sources */,
 				0F53F185280BC7D200ED381E /* KeyWallet+CoreDataProperties.swift in Sources */,
 				0FC75C862803842E002A5945 /* AccountStateViewController.swift in Sources */,
 				0FA89BD128069B5D000F5681 /* UIView+Extensions.swift in Sources */,
@@ -510,8 +523,11 @@
 				0F53F184280BC7D200ED381E /* KeyWallet+CoreDataClass.swift in Sources */,
 				0F5A50CC280BC55F00F2287A /* KeysService.swift in Sources */,
 				0FC75CC02803912A002A5945 /* DepositingBalanceTableViewCell.swift in Sources */,
+				0FC251112810959F005D0D12 /* ViewControllerNames.swift in Sources */,
+				0FC2510F2810919C005D0D12 /* AssetsViewController.swift in Sources */,
 				0F68DC0B280759A30023E952 /* WithdrawViewController.swift in Sources */,
 				0F68DC09280759970023E952 /* DepositViewController.swift in Sources */,
+				0F7FE4BA28125396008902EC /* UIViewController+Extensions.swift in Sources */,
 				0FA89BC728065272000F5681 /* NetworkSelectionTableViewController.swift in Sources */,
 				0F5A50CA280BC52D00F2287A /* CoreDataService.swift in Sources */,
 				0FC75C842803842E002A5945 /* SceneDelegate.swift in Sources */,

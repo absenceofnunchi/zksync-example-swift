@@ -118,7 +118,7 @@ extension MethodSelectionViewController: UITableViewDataSource, UITableViewDeleg
                 return 150
             default:
                 return 50
-        }
+        }   
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

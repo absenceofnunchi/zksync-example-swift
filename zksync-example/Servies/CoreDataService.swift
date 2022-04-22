@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class LocalDatabase {
-    lazy var container: NSPersistentCloudKitContainer = NSPersistentCloudKitContainer(name: "CoreDataModel")
+    lazy var container: NSPersistentCloudKitContainer = NSPersistentCloudKitContainer(name: "Model")
     private lazy var mainContext = self.container.viewContext
     
     init() {

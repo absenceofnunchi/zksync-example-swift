@@ -15,8 +15,8 @@ class WalletGenerationController {
 }
 
 enum WalletCreationType {
-    case .createKey
-    case .importKey
+    case createKey
+    case importKey
 }
 
 extension WalletGenerationController {
@@ -39,6 +39,8 @@ extension WalletGenerationController {
                         self.localStorage.saveWallet(isRegistered: false, wallet: wallet) { (error) in
                             completion(error)
                         }
+                        
+                        completion(nil)
                     }
                 }
             case .importKey:
