@@ -7,6 +7,7 @@
 
 import Foundation
 import web3swift
+import ZKSync
 
 class WalletGenerationController {
     let localStorage = LocalDatabase()
@@ -64,5 +65,23 @@ extension WalletGenerationController {
                     }
                 }
         }
+    }
+    
+    func createZKWallet(_ chainId: ChainId, privateKey: String) -> Wallet {
+        guard let ethSigner = try? DefaultEthSigner(privateKey: privateKey) else {
+            fatalError()
+        }
+
+        guard let zkSigner = try? ZkSigner(ethSigner: ethSigner, chainId: chainId) else {
+            fatalError()
+        }
+
+        let provider = DefaultProvider(chainId: chainId)
+
+        guard let wallet = try? DefaultWallet(ethSigner: ethSigner, zkSigner: zkSigner, provider: provider) else {
+            fatalError()
+        }
+
+        return wallet
     }
 }

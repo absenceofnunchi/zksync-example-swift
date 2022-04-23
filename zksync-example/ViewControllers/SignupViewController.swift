@@ -54,6 +54,8 @@ final class SignupViewController: UIViewController {
                     guard let privateKey = try KeysService().getWalletPrivateKey(password: password) else { return }
                     let wallet = self?.createZKWallet(chainId, privateKey: privateKey)
                     print("wallet", wallet as Any)
+                    
+                    
                     self?.hideSpinner()
                 } catch {
                     print(error)
